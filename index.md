@@ -300,6 +300,7 @@
 		</select>
 <br>
     <label class="label">6. Select the maximum result limit:</label>
+<br>
 		<select class="select" id="top">
 	  	<option value="10">10</option>
 		<option value="50">50</option>
