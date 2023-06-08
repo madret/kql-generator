@@ -58,7 +58,7 @@
 			if (selectedColumns.length > 0) {
 				query += " | project Timestamp " + selectedColumns.join(", ");
 			}
-			if (selectedTop.length > 0) {
+			if (selectedTop !== "") {
 				query += " | top " + selectedTop.join(", ");
 			}
 
