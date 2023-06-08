@@ -51,7 +51,7 @@
 				query += ' | where ProcessCommandLine has_any ("' + selectedCommands.join('", "') + '")';
 			}
 			if (selectedColumns.length > 0) {
-				query += " | project " + selectedColumns.join(", ");
+				query += " | project Timestamp" + selectedColumns.join(", ");
 			}
 
 			// Update the output code box
@@ -262,7 +262,7 @@
 <br>
 		<label class="label">5. Select Result Columns:</label>
 
-		<select class="multi-select" id="columns" multiple>
+		<select class="multi-select" id="columns" placeholder="always starts with Timestamp" multiple>
     <option value="AccountDisplayName">AccountDisplayName</option>
     <option value="AccountName">AccountName</option>
     <option value="AccountType">AccountType</option>
@@ -290,7 +290,6 @@
     <option value="Subject">Subject</option>
     <option value="TargetAccountSid">TargetAccountSid</option>
     <option value="ThreatTypes">ThreatTypes</option>
-    <option value="Timestamp">Timestamp</option>
     <option value="Title">Title</option>
     <option value="ZapTime">ZapTime</option>
 			<!-- Add more column options as needed -->
