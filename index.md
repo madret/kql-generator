@@ -295,9 +295,9 @@
     <option value="ZapTime">ZapTime</option>
 			<!-- Add more column options as needed -->
 		</select>
-<br></br>
+<br>
 		<button onclick="generateQuery()">Generate Query</button>
-<br></br>
+<br>
 		<div class="code-box" id="output"></div>
 	</div>
 </body>
