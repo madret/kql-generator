@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>KQL Hunting Generator</title>
+	<title>KQL Hunting query Generator</title>
 	<style>
 		.container {
 			width: 500px;
@@ -76,7 +76,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>KQL Hunting Generator</h1>
+		<h1>KQL Hunting query Generator</h1>
 
 		<div class="label">1. Select table(s):</div>
 		<select class="multi-select" id="tables" multiple>
