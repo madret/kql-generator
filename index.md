@@ -113,10 +113,10 @@
     <option value="UrlClickEvents">UrlClickEvents</option>
 			<!-- Add more table options as needed -->
 		</select>
-<br></br>
+<br>
 		<div class="label">2. Set Time Range:</div>
 		<input type="text" id="time-range" placeholder="e.g., 7d" />
-<br></br>
+<br>
 		<div class="label">3. Select Processes:</div>
 		<select class="multi-select" id="processes" multiple>
     <option value="AccCheckConsole.exe">AccCheckConsole.exe</option>
@@ -239,7 +239,7 @@
 
 			<!-- Add more process options as needed -->
 		</select>
-<br></br>
+<br>
 		<label class="label">4. Select Command-line strings:</label>
 		<select class="multi-select" id="commands" multiple>
 <option value="DownloadFile">DownloadFile</option>
@@ -259,7 +259,7 @@
 <option value="https">https</option>
 			<!-- Add more command options as needed -->
 		</select>
-<br></br>
+<br>
 		<label class="label">5. Select Result Columns:</label>
 
 		<select class="multi-select" id="columns" multiple>
