@@ -38,6 +38,7 @@
 			var selectedProcesses = getSelectedValues("processes");
 			var selectedCommands = getSelectedValues("commands");
 			var selectedColumns = getSelectedValues("columns");
+			var selectedColumns = getSelectedValues("top");
 
 			// Generate the query
 			var query = "union " + selectedTables.join(", ");
@@ -52,6 +53,9 @@
 			}
 			if (selectedColumns.length > 0) {
 				query += " | project Timestamp" + selectedColumns.join(", ");
+			}
+			if (selectedColumns.length > 0) {
+				query += " | top " + selectedColumns.join(", ");
 			}
 
 			// Update the output code box
@@ -295,9 +299,17 @@
 			<!-- Add more column options as needed -->
 		</select>
 <br>
+    <p>- Select mode:</p>
+		<select class="select" id="top">
+	  	<option value="10">10</option>
+		<option value="50">50</option>
+		<option value="100">100</option>
+		<option value="200">200</option>
+		<option value="500">500</option>
+		</select>
 		<button onclick="generateQuery()">Generate Query</button>
 <br>
-		<div class="code-box" id="output" placeholder="always starts with Timestamp" ></div>
+		<div class="code-box" id="output"></div>
 	</div>
 </body>
 </html>
