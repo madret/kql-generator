@@ -118,8 +118,10 @@
 			<!-- Add more table options as needed -->
 		</select>
 <br>
+<br>
 		<div class="label">2. Set Time Range:</div>
 		<input type="text" id="time-range" placeholder="e.g., 7d" />
+<br>
 <br>
 		<div class="label">3. Select Processes:</div>
 		<select class="multi-select" id="processes" multiple>
@@ -244,6 +246,7 @@
 			<!-- Add more process options as needed -->
 		</select>
 <br>
+<br>
 		<label class="label">4. Select Command-line strings:</label>
 		<select class="multi-select" id="commands" multiple>
 <option value="DownloadFile">DownloadFile</option>
@@ -263,6 +266,7 @@
 <option value="https">https</option>
 			<!-- Add more command options as needed -->
 		</select>
+<br>
 <br>
 		<label class="label">5. Select Result Columns:</label>
 
@@ -299,7 +303,9 @@
 			<!-- Add more column options as needed -->
 		</select>
 <br>
+<br>
     <label class="label">6. Select the maximum result limit:</label>
+<br>
 <br>
 		<select class="select" id="top">
 	  	<option value="10">10</option>
@@ -311,7 +317,9 @@
 		<option value="1000">1000</option>
 		</select>
 <br>
+<br>
 		<button onclick="generateQuery()">Generate Query</button>
+<br>
 <br>
 		<div class="code-box" id="output"></div>
 	</div>
