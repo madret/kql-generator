@@ -42,7 +42,7 @@
 			var selectedProcesses = getSelectedValues("processes");
 			var selectedCommands = getSelectedValues("commands");
 			var selectedColumns = getSelectedValues("columns");
-			var selectedColumns = getSelectedValues("top");
+			var selectedTop = getSelectedValues("top");
 
 			// Generate the query
 			var query = "union " + selectedTables.join(", ");
@@ -56,9 +56,9 @@
 				query += ' | where ProcessCommandLine has_any ("' + selectedCommands.join('", "') + '")';
 			}
 			if (selectedColumns.length > 0) {
-				query += " | project Timestamp" + selectedColumns.join(", ");
+				query += " | project Timestamp " + selectedColumns.join(", ");
 			}
-			if (selectedColumns.length > 0) {
+			if (selectedTop.length > 0) {
 				query += " | top " + selectedColumns.join(", ");
 			}
 
