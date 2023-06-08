@@ -262,7 +262,7 @@
 <br>
 		<label class="label">5. Select Result Columns:</label>
 
-		<select class="multi-select" id="columns" placeholder="always starts with Timestamp" multiple>
+		<select class="multi-select" id="columns" multiple>
     <option value="AccountDisplayName">AccountDisplayName</option>
     <option value="AccountName">AccountName</option>
     <option value="AccountType">AccountType</option>
@@ -297,7 +297,7 @@
 <br>
 		<button onclick="generateQuery()">Generate Query</button>
 <br>
-		<div class="code-box" id="output"></div>
+		<div class="code-box" id="output" placeholder="always starts with Timestamp" ></div>
 	</div>
 </body>
 </html>
