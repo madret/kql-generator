@@ -299,7 +299,7 @@
 			<!-- Add more column options as needed -->
 		</select>
 <br>
-    <p>- Select mode:</p>
+    <label class="label">6. Select the maximum result limit:</label>
 		<select class="select" id="top">
 	  	<option value="10">10</option>
 		<option value="50">50</option>
@@ -307,6 +307,7 @@
 		<option value="200">200</option>
 		<option value="500">500</option>
 		</select>
+<br>
 		<button onclick="generateQuery()">Generate Query</button>
 <br>
 		<div class="code-box" id="output"></div>
