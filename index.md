@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>KQL Hunting query Generator</title>
+	<title>Kusto Query Language Hunting Generator</title>
 	<style>
 		.container {
 			width: 500px;
@@ -77,6 +77,7 @@
 <body>
 	<div class="container">
 		<h1>KQL Hunting query Generator</h1>
+		<h3>Microsoft 365 Defender focussed.</h3>
 
 		<div class="label">1. Select table(s):</div>
 		<select class="multi-select" id="tables" multiple>
