@@ -56,10 +56,10 @@
 				query += ' | where ProcessCommandLine has_any ("' + selectedCommands.join('", "') + '")';
 			}
 			if (selectedColumns.length > 0) {
-				query += " | project Timestamp " + selectedColumns.join(", ");
+				query += " | project Timestamp, " + selectedColumns.join(", ");
 			}
 			if (selectedTop !== "") {
-				query += " | top " + selectedTop.join(", ");
+				query += " | top " + selectedTop.join(", ") + " by Timestamp";
 			}
 
 			// Update the output code box
