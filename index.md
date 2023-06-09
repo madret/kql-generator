@@ -273,13 +273,13 @@
 		</select>
 <br>
 <br>
-		<label class="label">5. Select Result Columns:</label>
+		<label class="label">5. Select Result Columns (project):</label>
 
 		<select class="multi-select" id="columns" multiple>
     <option value="AccountDisplayName">AccountDisplayName</option>
     <option value="AccountName">AccountName</option>
     <option value="AccountType">AccountType</option>
-    <option value="ActionType">ActionType</option>
+    <option value="AccountUpn">AccountUpn</option>
     <option value="AlertId">AlertId</option>
     <option value="Application">Application</option>
     <option value="Category">Category</option>
@@ -304,6 +304,9 @@
     <option value="TargetAccountSid">TargetAccountSid</option>
     <option value="ThreatTypes">ThreatTypes</option>
     <option value="Title">Title</option>
+    <option value="Url">Url</option>
+    <option value="UrlChain">UrlChain</option>
+    <option value="Workload">Workload</option>
     <option value="ZapTime">ZapTime</option>
 			<!-- Add more column options as needed -->
 		</select>
