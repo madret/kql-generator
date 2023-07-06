@@ -128,7 +128,7 @@
 		<input type="text" id="time-range" placeholder="e.g., 7d" />
 <br>
 <br>
-		<div class="label">3. Select Processes:</div>
+		<div class="label">3. Select Processes (lolbins):</div>
 		<select class="multi-select" id="processes" multiple>
     <option value="AccCheckConsole.exe">AccCheckConsole.exe</option>
     <option value="adplus.exe">adplus.exe</option>
