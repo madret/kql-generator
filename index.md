@@ -39,7 +39,7 @@
 			// Retrieve user-selected options
 			var selectedTables = getSelectedValues("tables");
 			var timeRange = document.getElementById("time-range").value;
-			var selectedProcesses = getSelectedValues("processes");
+			var selectedProcesses = document.getElementById("processes").value;
 			var selectedCommands = getSelectedValues("commands");
 			var selectedColumns = getSelectedValues("columns");
 			var selectedTop = getSelectedValues("top");
@@ -49,8 +49,8 @@
 			if (timeRange !== "") {
 				query += " | where Timestamp > ago(" + timeRange + ")";
 			}
-			if (selectedProcesses.length > 0) {
-				query += ' | where FileName in~ ("' + selectedProcesses.join('", "') + '")';
+			if (selectedProcesses !== "") {
+                                query += ' | where FileName in~ ' + '("' + selectedProcesses + '")';
 			}
 			if (selectedCommands.length > 0) {
 				query += ' | where ProcessCommandLine has_any ("' + selectedCommands.join('", "') + '")';
@@ -128,128 +128,8 @@
 		<input type="text" id="time-range" placeholder="e.g., 7d" />
 <br>
 <br>
-		<div class="label">3. Select Processes (<a href="https://lolbas-project.github.io/#">lolbins</a>):</div>
-		<select class="multi-select" id="processes" multiple>
-    <option value="AccCheckConsole.exe">AccCheckConsole.exe</option>
-    <option value="adplus.exe">adplus.exe</option>
-    <option value="AgentExecutor.exe">AgentExecutor.exe</option>
-    <option value="AppInstaller.exe">AppInstaller.exe</option>
-    <option value="Appvlp.exe">Appvlp.exe</option>
-    <option value="Aspnet_Compiler.exe">Aspnet_Compiler.exe</option>
-    <option value="At.exe">At.exe</option>
-    <option value="Atbroker.exe">Atbroker.exe</option>
-    <option value="Bash.exe">Bash.exe</option>
-    <option value="Bginfo.exe">Bginfo.exe</option>
-    <option value="Bitsadmin.exe">Bitsadmin.exe</option>
-    <option value="Cdb.exe">Cdb.exe</option>
-    <option value="CertOC.exe">CertOC.exe</option>
-    <option value="CertReq.exe">CertReq.exe</option>
-    <option value="Certutil.exe">Certutil.exe</option>
-    <option value="Cmstp.exe">Cmstp.exe</option>
-    <option value="Cmd.exe">Cmd.exe</option>
-    <option value="Cmdkey.exe">Cmdkey.exe</option>
-    <option value="cmdl32.exe">cmdl32.exe</option>
-    <option value="ConfigSecurityPolicy.exe">ConfigSecurityPolicy.exe</option>
-    <option value="Conhost.exe">Conhost.exe</option>
-    <option value="Control.exe">Control.exe</option>
-    <option value="Csc.exe">Csc.exe</option>
-    <option value="Cscript.exe">Cscript.exe</option>
-    <option value="CustomShellHost.exe">CustomShellHost.exe</option>
-    <option value="DataSvcUtil.exe">DataSvcUtil.exe</option>
-    <option value="Desktopimgdownldr.exe">Desktopimgdownldr.exe</option>
-    <option value="DeviceCredentialDeployment.exe">DeviceCredentialDeployment.exe</option>
-    <option value="Devinit.exe">Devinit.exe</option>
-    <option value="Devtoolslauncher.exe">Devtoolslauncher.exe</option>
-    <option value="Dfsvc.exe">Dfsvc.exe</option>
-    <option value="Diantz.exe">Diantz.exe</option>
-    <option value="Diskshadow.exe">Diskshadow.exe</option>
-    <option value="Dnscmd.exe">Dnscmd.exe</option>
-    <option value="Dotnet.exe">Dotnet.exe</option>
-    <option value="Esentutl.exe">Esentutl.exe</option>
-    <option value="Eventvwr.exe">Eventvwr.exe</option>
-    <option value="Expand.exe">Expand.exe</option>
-    <option value="Explorer.exe">Explorer.exe</option>
-    <option value="Extexport.exe">Extexport.exe</option>
-    <option value="Extrac32.exe">Extrac32.exe</option>
-    <option value="Findstr.exe">Findstr.exe</option>
-    <option value="Finger.exe">Finger.exe</option>
-    <option value="fltMC.exe">fltMC.exe</option>
-    <option value="Forfiles.exe">Forfiles.exe</option>
-    <option value="Ftp.exe">Ftp.exe</option>
-        <option value="GfxDownloadWrapper.exe">GfxDownloadWrapper.exe</option>
-    <option value="Hh.exe">Hh.exe</option>
-    <option value="IMEWDBLD.exe">IMEWDBLD.exe</option>
-    <option value="Ie4uinit.exe">Ie4uinit.exe</option>
-    <option value="Ieexec.exe">Ieexec.exe</option>
-    <option value="Ilasm.exe">Ilasm.exe</option>
-    <option value="Infdefaultinstall.exe">Infdefaultinstall.exe</option>
-    <option value="Installutil.exe">Installutil.exe</option>
-    <option value="Jsc.exe">Jsc.exe</option>
-    <option value="Ldifde.exe">Ldifde.exe</option>
-    <option value="Makecab.exe">Makecab.exe</option>
-    <option value="Mavinject.exe">Mavinject.exe</option>
-    <option value="Microsoft.Workflow.Compiler.exe">Microsoft.Workflow.Compiler.exe</option>
-    <option value="Mmc.exe">Mmc.exe</option>
-    <option value="MpCmdRun.exe">MpCmdRun.exe</option>
-    <option value="Msbuild.exe">Msbuild.exe</option>
-    <option value="Msconfig.exe">Msconfig.exe</option>
-    <option value="Msdt.exe">Msdt.exe</option>
-    <option value="Msedge.exe">Msedge.exe</option>
-    <option value="Mshta.exe">Mshta.exe</option>
-    <option value="Msiexec.exe">Msiexec.exe</option>
-    <option value="Mshtml.dll">Mshtml.dll</option>
-    <option value="Mshtmled.exe">Mshtmled.exe</option>
-    <option value="MsoHtmEd.exe">MsoHtmEd.exe</option>
-    <option value="Mspub.exe">Mspub.exe</option>
-    <option value="msxsl.exe">msxsl.exe</option>
-    <option value="ntdsutil.exe">ntdsutil.exe</option>
-    <option value="OpenConsole.exe">OpenConsole.exe</option>
-    <option value="Powerpnt.exe">Powerpnt.exe</option>
-    <option value="Powershell.exe">Powershell.exe</option>
-    <option value="powershell_ise.exe">powershell_ise.exe</option>
-    <option value="Procdump.exe">Procdump.exe</option>
-    <option value="ProtocolHandler.exe">ProtocolHandler.exe</option>
-    <option value="rcsi.exe">rcsi.exe</option>
-    <option value="Remote.exe">Remote.exe</option>
-    <option value="Rundll32.exe">Rundll32.exe</option>
-    <option value="Runexehelper.exe">Runexehelper.exe</option>
-    <option value="Runonce.exe">Runonce.exe</option>
-    <option value="Runscripthelper.exe">Runscripthelper.exe</option>
-    <option value="Sc.exe">Sc.exe</option>
-    <option value="Schtasks.exe">Schtasks.exe</option>
-    <option value="Scriptrunner.exe">Scriptrunner.exe</option>
-    <option value="Setres.exe">Setres.exe</option>
-    <option value="SettingSyncHost.exe">SettingSyncHost.exe</option>
-    <option value="Shell32.dll">Shell32.dll</option>
-    <option value="Stordiag.exe">Stordiag.exe</option>
-    <option value="SyncAppvPublishingServer.exe">SyncAppvPublishingServer.exe</option>
-    <option value="Syncappvpublishingserver.vbs">Syncappvpublishingserver.vbs</option>
-<option value="Sqldumper.exe">Sqldumper.exe</option>
-<option value="Sqlps.exe">Sqlps.exe</option>
-<option value="SQLToolsPS.exe">SQLToolsPS.exe</option>
-<option value="Squirrel.exe">Squirrel.exe</option>
-<option value="te.exe">te.exe</option>
-<option value="Tracker.exe">Tracker.exe</option>
-<option value="Update.exe">Update.exe</option>
-<option value="VSIISExeLauncher.exe">VSIISExeLauncher.exe</option>
-<option value="vsjitdebugger.exe">vsjitdebugger.exe</option>
-<option value="Wfc.exe">Wfc.exe</option>
-<option value="Winword.exe">Winword.exe</option>
-<option value="Wsl.exe">Wsl.exe</option>
-<option value="vsls-agent.exe">vsls-agent.exe</option>
-<option value="CL_LoadAssembly.ps1">CL_LoadAssembly.ps1</option>
-<option value="CL_Mutexverifiers.ps1">CL_Mutexverifiers.ps1</option>
-<option value="CL_Invocation.ps1">CL_Invocation.ps1</option>
-<option value="Launch-VsDevShell.ps1">Launch-VsDevShell.ps1</option>
-<option value="Manage-bde.wsf">Manage-bde.wsf</option>
-<option value="Pubprn.vbs">Pubprn.vbs</option>
-<option value="Syncappvpublishingserver.vbs">Syncappvpublishingserver.vbs</option>
-<option value="UtilityFunctions.ps1">UtilityFunctions.ps1</option>
-<option value="winrm.vbs">winrm.vbs</option>
-<option value="Pester.bat">Pester.bat</option>
-
-			<!-- Add more process options as needed -->
-		</select>
+		<div class="label">3. Enter process name:</div>
+		<input type=text id="processes" placeholder="e.g., powershell.exe"/>
 <br>
 <br>
 		<label class="label">4. Select Command-line strings:</label>
