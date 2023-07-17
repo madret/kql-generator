@@ -104,7 +104,7 @@
 		<h3>Microsoft 365 Defender focussed.</h3>
 
 		<div class="label">1. Enter search:</div>
-		<input type="text" id="tables" placeholder="Can be anything" />
+		<input type="text" id="tables" placeholder="Required, can be anything." />
 <br>
 <br>
 		<div class="label">2. Set Time Range:</div>
