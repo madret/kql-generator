@@ -157,7 +157,7 @@
 		</select>
 <br>
 <br>
-		<label class="label">. Select Result Column mode (project):</label>
+		<label class="label">9. Select Result Column mode (project):</label>
 <br>
 	<select class="select" id="columns">
   	<option value=" | project $table,Timestamp,AccountName,AccountUpn,DeviceName,LocalIP,RemoteIP,Port,FileName,FolderPath,ProcessCommandLine,DestinationDeviceName,DestinationIPAddress,DestinationPort,RemoteUrl,ActionType,LogonType,ProcessVersionInfoOriginalFileName,ProcessId,ProcessTokenElevation,ProcessCreationTime,LogonId,SHA1,SHA256,FileSize,InitiatingProcessAccountName,InitiatingProcessFileName,InitiatingProcessFolderPath,InitiatingProcessCreationTime">Network mode</option>
