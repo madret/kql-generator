@@ -108,7 +108,7 @@
 <br>
 <br>
 		<div class="label">2. Set Time Range:</div>
-		<input type="text" id="time-range" placeholder="e.g., 7d" />
+		<input type="text" id="time-range" placeholder="e.g., 1d" />
 <br>
 <br>
 		<div class="label">3. Enter user account name:</div>
