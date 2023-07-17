@@ -115,24 +115,23 @@
 		<input type=text id="account-name" placeholder="e.g., administrator"/>
 <br>
 <br>
-
-		<div class="label">4. Enter source IP:</div>
-		<input type=text id="intIP" placeholder="<Local IP>"/>
-<br>
-<br>
-
-		<div class="label">5. Enter destination IP:</div>
-		<input type=text id="extIP" placeholder="<Remote IP>"/>
-<br>
-<br>
-		<div class="label">6. Enter url:</div>
-		<input type=text id="url" placeholder="<domain name>"/>
-<br>
-<br>
-		<div class="label">7. Enter device name:</div>
+		<div class="label">4. Enter device name:</div>
 		<input type=text id="device-name" placeholder="e.g., DESKTOP-777"/>
 <br>
 <br>
+		<div class="label">5. Enter source IP:</div>
+		<input type=text id="intIP" placeholder="<Local IP>"/>
+<br>
+<br>
+		<div class="label">6. Enter destination IP:</div>
+		<input type=text id="extIP" placeholder="<Remote IP>"/>
+<br>
+<br>
+		<div class="label">7. Enter url:</div>
+		<input type=text id="url" placeholder="<domain name>"/>
+<br>
+<br>
+
 		<div class="label">8.1. Enter process name:</div>
 		<input type=text id="processes" placeholder="e.g., powershell.exe"/>
 <br>
