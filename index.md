@@ -15,7 +15,9 @@
 		h3 {
 			text-align: center;
 		}
-
+		h4 {
+			text-align: center;
+		}
 		.label {
 			font-weight: bold;
 			margin-bottom: 10px;
@@ -102,6 +104,7 @@
 	<div class="container">
 		<h1>KQL Hunting query Generator</h1>
 		<h3>Microsoft 365 Defender focussed.</h3>
+  		<h4>Input fields are optional, if left blank they are ignored.</h4>
 
 		<div class="label">1. Enter search:</div>
 		<input type="text" id="tables" placeholder="Can be any string search, default value is a wildcard." value="*"/>
@@ -136,7 +139,7 @@
 		<input type=text id="processes" placeholder="e.g., powershell.exe"/>
 <br>
 <br>
-		<label class="label">8.2. Select Command-line strings (optional):</label>
+		<label class="label">8.2. Select Command-line strings:</label>
 		<select class="multi-select" id="commands" multiple>
 <option value="DownloadFile">DownloadFile</option>
 <option value="DownloadData">DownloadData</option>
