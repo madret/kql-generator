@@ -15,7 +15,7 @@
 		h3 {
 			text-align: center;
 		}
-		h4 {
+		h6 {
 			text-align: center;
 		}
 		.label {
@@ -104,7 +104,7 @@
 	<div class="container">
 		<h1>KQL Hunting query Generator</h1>
 		<h3>Microsoft 365 Defender focussed.</h3>
-  		<h4>Input fields are optional, if left blank they are ignored.</h4>
+  		<h6>Input fields are optional, if left blank they are ignored.</h6>
 
 		<div class="label">1. Enter search:</div>
 		<input type="text" id="tables" placeholder="Can be any string search, default value is a wildcard." value="*"/>
