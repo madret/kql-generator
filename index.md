@@ -104,7 +104,7 @@
 	<div class="container">
 		<h1>KQL Hunting query Generator</h1>
 		<h3>Microsoft 365 Defender focussed.</h3>
-  		<h6>Input fields are optional, if left blank they are ignored.</h6>
+  		<h6 style="color: #FF0000;">Input fields are optional, if left blank they are ignored.</h6>
 
 		<div class="label">1. Enter search:</div>
 		<input type="text" id="tables" placeholder="Can be any string search, default value is a wildcard." value="*"/>
@@ -139,7 +139,7 @@
 		<input type=text id="processes" placeholder="e.g., powershell.exe"/>
 <br>
 <br>
-		<label class="label">8.2. Select Command-line strings:</label>
+		<label class="label">8.2. Select Command-line arguments:</label>
 		<select class="multi-select" id="commands" multiple>
 <option value="DownloadFile">DownloadFile</option>
 <option value="DownloadData">DownloadData</option>
@@ -160,7 +160,7 @@
 		</select>
 <br>
 <br>
-		<label class="label">9. Select Result Column mode (project):</label>
+		<label class="label">9. Select project Column mode:</label>
 <br>
 	<select class="select" id="columns">
 	<option value="">All</option>
