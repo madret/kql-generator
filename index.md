@@ -171,7 +171,7 @@
     <input type="text" id="extIP" placeholder="<Remote IP>" />
 
     <div class="label">7. Enter url:</div>
-    <input type="text" id="url" placeholder="<domain name>" />
+    <input type="text" id="url" placeholder="<example.com>" />
 
     <div class="label">8.1. Enter file name(s):</div>
     <input type="text" id="processes" placeholder="e.g., powershell.exe, cmd.exe" oninput="generateQuery()" />
