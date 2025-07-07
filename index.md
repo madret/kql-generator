@@ -56,12 +56,6 @@
       cursor: pointer;
       width: 100%;
     }
-
-    a {
-      display: block;
-      text-align: center;
-      margin-top: 20px;
-    }
   </style>
 
   <script>
@@ -174,7 +168,7 @@
     <input type="text" id="url" placeholder="<example.com>" />
 
     <div class="label">8.1. Enter file name(s):</div>
-    <input type="text" id="processes" placeholder="e.g., powershell.exe, cmd.exe" oninput="generateQuery()" />
+    <input type="text" id="processes" placeholder="e.g., powershell.exe, cmd.exe" />
 
     <div class="label">8.2. Enter Command-line argument(s):</div>
     <input type="text" id="commands" placeholder="e.g., DownloadFile, Invoke-Expression" />
@@ -199,8 +193,6 @@
     <button onclick="copyToClipboard()">Copy to Clipboard</button>
 
     <div class="code-box" id="output"></div>
-
-    <a href="https://twitter.com/b41ss">@b41ss</a>
   </div>
 </body>
 </html>
