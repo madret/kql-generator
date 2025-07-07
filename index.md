@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,12 +9,6 @@
       font-family: Arial, sans-serif;
       background-color: #ffffff;
       color: #000000;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    body.dark {
-      background-color: #121212;
-      color: #f0f0f0;
     }
 
     .container {
@@ -32,7 +26,7 @@
       margin: 15px 0 5px;
     }
 
-    .multi-select, .select, input[type="text"] {
+    .select, input[type="text"] {
       width: 100%;
       padding: 8px;
       box-sizing: border-box;
@@ -50,11 +44,6 @@
       overflow: hidden;
     }
 
-    body.dark .code-box {
-      background-color: #1e1e1e;
-      border-color: #444;
-    }
-
     .code-box.show {
       opacity: 1;
       padding: 10px;
@@ -66,11 +55,6 @@
       margin-top: 10px;
       cursor: pointer;
       width: 100%;
-    }
-
-    .dark-toggle {
-      margin-top: 20px;
-      text-align: center;
     }
 
     a {
@@ -85,12 +69,12 @@
       const Tables = document.getElementById("tables").value;
       const timeRange = document.getElementById("time-range").value;
       const selectedProcesses = document.getElementById("processes").value;
+      const commandLine = document.getElementById("commands").value;
       const selectedAccount = document.getElementById("account-name").value;
       const selectedDevice = document.getElementById("device-name").value;
       const selectedintIP = document.getElementById("intIP").value;
       const selectedextIP = document.getElementById("extIP").value;
       const selectedUrl = document.getElementById("url").value;
-      const selectedCommands = getSelectedValues("commands");
       const selectedColumns = getSelectedValues("columns");
       const selectedTop = getSelectedValues("top");
 
@@ -104,28 +88,29 @@
         query += ` | where FileName in~ ("${processList.join('", "')}")`;
       }
 
-      if (selectedCommands.length > 0) {
-        query += ` | where ProcessCommandLine has_any ("${selectedCommands.join('", "')}")`;
+      if (commandLine !== "") {
+        const cmdArgs = commandLine.split(',').map(c => c.trim()).filter(c => c);
+        query += ` | where ProcessCommandLine has_any ("${cmdArgs.join('", "')}")`;
       }
 
       if (selectedAccount !== "") {
-        query += ` | where AccountName contains "${selectedAccount}"`;
+        query += ` | where AccountName has "${selectedAccount}"`;
       }
 
       if (selectedDevice !== "") {
-        query += ` | where DeviceName contains "${selectedDevice}"`;
+        query += ` | where DeviceName has "${selectedDevice}"`;
       }
 
       if (selectedintIP !== "") {
-        query += ` | where LocalIP contains "${selectedintIP}"`;
+        query += ` | where LocalIP has "${selectedintIP}"`;
       }
 
       if (selectedextIP !== "") {
-        query += ` | where RemoteIP contains "${selectedextIP}"`;
+        query += ` | where RemoteIP has "${selectedextIP}"`;
       }
 
       if (selectedUrl !== "") {
-        query += ` | where RemoteUrl contains "${selectedUrl}"`;
+        query += ` | where RemoteUrl has "${selectedUrl}"`;
       }
 
       if (selectedColumns != "") {
@@ -157,10 +142,6 @@
       navigator.clipboard.writeText(text).then(() => {
         alert("Query copied to clipboard!");
       });
-    }
-
-    function toggleDark() {
-      document.body.classList.toggle("dark");
     }
   </script>
 </head>
@@ -195,23 +176,8 @@
     <div class="label">8.1. Enter file name(s):</div>
     <input type="text" id="processes" placeholder="e.g., powershell.exe, cmd.exe" oninput="generateQuery()" />
 
-    <label class="label">8.2. Select Command-line arguments:</label>
-    <select class="multi-select" id="commands" multiple>
-      <option value="DownloadFile">DownloadFile</option>
-      <option value="DownloadData">DownloadData</option>
-      <option value="DownloadString">DownloadString</option>
-      <option value="WebRequest">WebRequest</option>
-      <option value="WebClient">WebClient</option>
-      <option value="Invoke-Item">Invoke-Item</option>
-      <option value="Invoke-WebRequest">Invoke-WebRequest</option>
-      <option value="Invoke-Expression">Invoke-Expression</option>
-      <option value="Start-Process">Start-Process</option>
-      <option value="Out-File">Out-File</option>
-      <option value="Hidden">Hidden</option>
-      <option value="Shellcode">Shellcode</option>
-      <option value="http">http</option>
-      <option value="https">https</option>
-    </select>
+    <div class="label">8.2. Enter Command-line argument(s):</div>
+    <input type="text" id="commands" placeholder="e.g., DownloadFile, Invoke-Expression" />
 
     <label class="label">9. Select project Column mode:</label>
     <select class="select" id="columns">
@@ -233,10 +199,6 @@
     <button onclick="copyToClipboard()">Copy to Clipboard</button>
 
     <div class="code-box" id="output"></div>
-
-    <div class="dark-toggle">
-      <label><input type="checkbox" onchange="toggleDark()" /> Enable Dark Mode</label>
-    </div>
 
     <a href="https://twitter.com/b41ss">@b41ss</a>
   </div>
